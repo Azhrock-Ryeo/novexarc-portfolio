@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+/* Color values below come from the supplied Figma code. */
+@theme {
+  --color-page: #06050a;
+  --color-surface: #151020;
+  --color-line: #413251;
+  --color-ink: #f7f4ff;
+  --color-muted: #c5bad7;
+  --color-magenta: #cb30e0;
+  --color-cyan: #00c3d0;
+  --color-lavender: #b9b0d5;
+  --font-sans: "Space Grotesk", Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  html {
+    color-scheme: dark;
+    scroll-behavior: auto; /* No motion in the foundation phase. */
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    background: var(--color-page);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+  }
+
+  button, input, select, textarea { font: inherit; }
+  button, a { -webkit-tap-highlight-color: transparent; }
+  button { cursor: pointer; }
+  img { max-width: 100%; height: auto; }
+  section[id] { scroll-margin-top: 2rem; }
+
+  :focus-visible {
+    outline: 2px solid var(--color-cyan);
+    outline-offset: 5px;
+  }
+}
+
+/* Space Grotesk is not bundled. The preview uses a system fallback until
+   an approved webfont source is connected. No animation CSS is included. */
